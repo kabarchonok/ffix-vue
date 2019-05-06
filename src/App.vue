@@ -9,6 +9,7 @@
                 <character-list></character-list>
                 <main-location></main-location>
                 <main-time-gil></main-time-gil>
+                <Footer></Footer>
             </div>
         </transition>
 
@@ -21,6 +22,7 @@
     import MainMenu from './components/MainMenu'
     import MainLocation from './components/MainLocation'
     import MainTimeGil from './components/MainTimeGil'
+    import Footer from './components/Footer'
 
     export default {
         name: 'app',
@@ -28,7 +30,8 @@
             CharacterList,
             MainMenu,
             MainLocation,
-            MainTimeGil
+            MainTimeGil,
+            Footer
         },
         computed: {
             page() {
