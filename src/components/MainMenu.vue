@@ -61,6 +61,7 @@
 
     .item {
         cursor: pointer;
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -68,6 +69,22 @@
         border: 3px solid #6e7776;
         border-right-color: #252727;
         border-bottom-color: #252727;
+        text-transform: capitalize;
+    }
+
+    .item:active {
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.14) 35%, transparent);
+    }
+
+    .item:hover::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100px;
+        height: 50px;
+        top: 25px;
+        left: -80px;
+        background: url("../assets/cursor.png")no-repeat center;
     }
 
     .item:first-child {
@@ -86,5 +103,14 @@
 
     .item--active {
         border-radius: 12px;
+        cursor: default;
+    }
+
+    .item--active:active {
+        background: none;
+    }
+
+    .item--active:hover::before {
+        content: none;
     }
 </style>
