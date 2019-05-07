@@ -1,36 +1,40 @@
 <template>
-    <div class="screen container">
-        <div class="contents">
+    <div class="screen">
+        <div class="container container-absolute">
             <main-menu></main-menu>
         </div>
 
-        <transition name="fade">
-            <div v-if="page === 'main'" class="contents">
+        <transition name="fade" mode="out-in">
+            <div v-if="page === 'main'" :key="1" class="container">
                 <character-list></character-list>
                 <main-location></main-location>
                 <main-time-gil></main-time-gil>
                 <Footer></Footer>
             </div>
+            <div v-if="page === 'config'" :key="2" class="container">
+                <Config></Config>
+                <Footer></Footer>
+            </div>
         </transition>
-
-        <div class="footer"></div>
     </div>
 </template>
 
 <script>
-    import CharacterList from './components/CharacterList'
     import MainMenu from './components/MainMenu'
+    import CharacterList from './components/CharacterList'
     import MainLocation from './components/MainLocation'
     import MainTimeGil from './components/MainTimeGil'
+    import Config from './components/Config'
     import Footer from './components/Footer'
 
     export default {
         name: 'app',
         components: {
-            CharacterList,
             MainMenu,
+            CharacterList,
             MainLocation,
             MainTimeGil,
+            Config,
             Footer
         },
         computed: {
@@ -48,7 +52,12 @@
         margin: 0 auto;
         background-image: url("assets/bg.png");
         width: 1024px;
-        height: 768px;
+        height: 840px;
+    }
+
+    .container {
+        width: inherit;
+        height: inherit;
         padding: 20px 10px 0 10px;
         display: grid;
         grid-template-columns: 7fr 3fr;
@@ -56,22 +65,21 @@
         grid-template-rows: repeat(10, 64px);
     }
 
-    .contents {
-        display: contents;
+    .container-absolute {
+        position: absolute;
     }
 
-    .footer {
-        grid-column: 1/3;
-        grid-row: 10;
-        background-image: url("../src/assets/container-bg.png");
-        position: relative;
-        border-top: 5px ridge #d3d5da;
-    }
-
-    .fade-enter-active > *, .fade-leave-active > * {
+    .fade-enter-active, .fade-leave-active {
         transition: all .3s;
+        position: absolute;
+        top: 0;
     }
-    .fade-enter > *, .fade-leave-to > * /* .fade-leave-active below version 2.1.8 */ {
+
+    .fade-enter, .fade-leave-to {
         opacity: 0;
+    }
+
+    .fade-enter-to, .fade-leave {
+        opacity: 1;
     }
 </style>
