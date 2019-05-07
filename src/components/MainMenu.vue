@@ -2,9 +2,8 @@
     <div class="menu" :class="{'menu--selected': activeItem !== 'main'}">
         <div v-for="item in items"
              v-bind:key="item"
-             @click="goTo(item)"
              class="item"
-            :class="{
+             :class="{
                 'item--hidden': item !== activeItem && activeItem !== 'main',
                 'item--active': item === activeItem
             }">
@@ -32,11 +31,6 @@
         computed: {
             activeItem() {
                 return this.$store.state.page
-            }
-        },
-        methods: {
-            goTo(page) {
-                this.$store.commit('updatePage', page);
             }
         }
     }
@@ -84,7 +78,7 @@
         height: 50px;
         top: 25px;
         left: -80px;
-        background: url("../assets/cursor.png")no-repeat center;
+        background: url("../assets/cursor.png") no-repeat center;
     }
 
     .item:first-child {
