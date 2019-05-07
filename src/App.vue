@@ -4,7 +4,7 @@
             <main-menu></main-menu>
         </div>
 
-        <transition name="fade" mode="out-in">
+        <transition name="fade" mode="out-in" appear>
             <div v-if="page === 'main'" :key="1" class="container">
                 <character-list></character-list>
                 <main-location></main-location>
