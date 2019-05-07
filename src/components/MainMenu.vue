@@ -36,10 +36,7 @@
         },
         methods: {
             goTo(page) {
-                if (page !== this.activeItem)
-                    this.$store.commit('updatePage', page);
-                else
-                    this.$store.commit('updatePage', 'main');
+                this.$store.commit('updatePage', page);
             }
         }
     }
