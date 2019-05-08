@@ -19,7 +19,7 @@
         data() {
             return {
                 items: [
-                    'item',
+                    'items',
                     'ability',
                     'equip',
                     'status',
