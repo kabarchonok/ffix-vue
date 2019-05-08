@@ -1,14 +1,49 @@
 <template>
     <div class="time-gil">
         <div class="title">Time & Gil</div>
-        <div class="time">03 : 07 : 43 </div>
+        <div class="time">{{time.h}} <span class="semicolon">:</span> {{time.m}} <span class="semicolon">:</span> {{time.s}}</div>
         <div class="money">4543</div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "MainTimeGil"
+        name: "MainTimeGil",
+        data() {
+            return {
+                time: {
+                    h: 3,
+                    m: 7,
+                    s: 55
+                }
+            }
+        },
+        mounted() {
+            this.showTime();
+        },
+        methods: {
+            showTime() {
+                let h = parseInt(this.time.h),
+                    m = parseInt(this.time.m),
+                    s = parseInt(this.time.s) + 1;
+
+                if (s === 60) {
+                    s = 0;
+                    m++;
+                }
+
+                if (m === 60) {
+                    m = 0;
+                    h++;
+                }
+
+                this.time.h = (h < 10) ? "0" + h : h;
+                this.time.m = (m < 10) ? "0" + m : m;
+                this.time.s = (s < 10) ? "0" + s : s;
+
+                setTimeout(this.showTime, 1000);
+            }
+        }
     }
 </script>
 
@@ -75,5 +110,20 @@
         content: 'G';
         text-transform: uppercase;
         font-size: 0.73em;
+    }
+
+    .semicolon {
+        animation:semicolon 1s steps(1) infinite;
+
+    }
+
+    @keyframes semicolon {
+        0% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0;
+        }
     }
 </style>
