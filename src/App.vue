@@ -1,8 +1,10 @@
 <template>
     <div class="screen">
-        <div class="container container-absolute">
-            <main-menu></main-menu>
-        </div>
+        <transition name="fade" appear>
+            <div class="container container-absolute">
+                <main-menu></main-menu>
+            </div>
+        </transition>
 
         <transition name="fade" mode="out-in" appear>
             <div v-if="page === 'main'" :key="1" class="container">
