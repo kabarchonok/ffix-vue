@@ -41,7 +41,7 @@
         border: 3px solid #717479;
         border-right-color: #3a3b43;
         border-bottom-color: #3a3b43;
-        padding: 11px 0 12px;
+        padding: 11px 0 11px;
     }
 
     .action-back {
