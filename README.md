@@ -1,5 +1,7 @@
 # ffix-vue
 
+## [Demo](https://vanya.xyz/ffix-vue/)
+
 ## Project setup
 ```
 npm install
