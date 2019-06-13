@@ -17,6 +17,9 @@
                 <Config></Config>
                 <Footer></Footer>
             </div>
+            <div v-if="page !== 'main' && page !== 'config'" class="container">
+                <Footer></Footer>
+            </div>
         </transition>
     </div>
 </template>
