@@ -1,4 +1,4 @@
-# ffix-vue
+# Final FAnntasy IX Vue
 
 ## <a href="https://vanya.xyz/ffix-vue/" target="_blank">Demo</a>
 
