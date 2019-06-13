@@ -119,11 +119,11 @@
 
     @keyframes semicolon {
         0% {
-            opacity: 1;
+            visibility: visible;
         }
 
         50% {
-            opacity: 0;
+            visibility: hidden;
         }
     }
 </style>
