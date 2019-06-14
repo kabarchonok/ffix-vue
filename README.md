@@ -1,5 +1,7 @@
 # Final Fantasy IX Vue
 
+![Preview](preview.png)
+
 ## <a href="https://vanya.xyz/ffix-vue/" target="_blank">Demo</a>
 
 ## Project setup
